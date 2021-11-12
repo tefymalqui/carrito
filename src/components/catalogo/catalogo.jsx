@@ -1,20 +1,15 @@
 import { Component } from 'react';
 import TitleComponent from './title/title';
+import ItemCount from '../ItemCount';
 
-class ItemListContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            name: '...'
-         }
-    }
-    render() { 
-        return ( 
-            <div>
-                <TitleComponent name={this.state.name} />
-            </div>
-         );
-    }
-}
+const ItemListContainer = ({ greeting}) => {
+    return (
+        <>
+          <h2>Item list </h2>
+          <h3>{greeting}</h3>
+          <ItemCount stock= {4} initial= {1}/>
+        </>
+    )
+};
  
 export default ItemListContainer;
